@@ -17,7 +17,7 @@ function select(id, divID, last) { //Food id
 	if(last) {
 		document.getElementById('send_p').style.display 	= "block";
 		send(selected, "create-order");
-		setTimeout('location = "http://localhost:8080/"',3750);
+		setTimeout('location = "https://mcfutta.herokuapp.com/"',3750);
 	} else {
 		document.getElementById(next(divID)).style.display 	= "block";
 	}

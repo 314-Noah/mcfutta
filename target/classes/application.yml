@@ -1,0 +1,10 @@
+
+#mongoDB
+spring:
+ data:
+  mongodb:
+    #host: localhost
+    port: 27017
+    database: test
+
+spring.data.mongodb.uri: mongodb+srv://password_manager:GiH43OTCDYOP7igx@noahcluster-uqr8c.azure.mongodb.net/test?retryWrites=true&w=majority

@@ -1,0 +1,86 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #FA4401;
+	color: #F0FA00;
+}
+
+h1 {
+	font-size: 750%;
+	margin: 3%;
+	color: #EFEF00;
+}
+
+.div {
+	margin-left: 4%;
+}
+
+h2 {
+	color: white;
+}
+
+.quad {
+	width: 80px;
+	height: 80px;
+	margin: 5px;
+	box-shadow: inset 0 0 19px 0px black;
+	float: left;
+}
+
+.down {
+	position: absolute;
+	bottom: 10px;
+}
+
+.input-form {
+	background-color: #DEDEDE;
+	width: 40%;
+	height: 60vh;
+	text-align: center;
+	float: left;
+}
+
+.food_list {
+	float: right;
+	background-color: #DEDEDE;
+	width: 30%;
+	height: 60vh;
+	text-align: center;
+}
+
+.btn {
+	background-color: #F0FA00;
+	margin: 1%;
+	height: 7vh;
+	width: 16%;
+	border-top-color: yellow;
+	border-left-color: yellow;
+	border-right-color: darkred;
+	border-bottom-color: darkred;
+	color: BLACK;
+}
+
+.btn:hover {
+	background-color: #E0EA00;
+}
+.btn:active {
+	background-color: #E0EA00;
+}
+
+button:focus {
+	background-color: #E0EA00;
+	border-top-color: #FA4401;
+	border-left-color: #FA4401;
+	border-right-color: #FA4401;
+	border-bottom-color: #FA4401;
+}
+
+.foodBtn {
+	height: 50px;
+	min-width: auto;
+}
+
+.a {
+	color: yellow;
+	font-size: 45px;
+}

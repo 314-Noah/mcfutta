@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title th:text="${menu.name}"></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/order_menu.js}"></script>
+</head>
+<body th:title="|${number_id}-#-${menu.id}|">
+	<h1>
+		McFutta
+	</h1>
+	<div>
+		<div th:each="col, cState: ${menu.collections}" th:id="${cState.index}" th:style="${cState.first} ? 'display: block;' : 'display: none;'">
+			<h2 th:text="${col.question}"></h2>
+				<div>
+					<button class="quad" th:each="food: ${col.food}" th:text="${food.name}" th:style="|background-color: ${food.color}|" th:id="${food.id}"
+		 				th:onclick="|select(this.id, ${cState.index}, ${cState.last})|" th:title="|${food.price}€|"></button>
+				</div>
+		</div>
+	</div>
+	<div>
+		<h2 id="send_p" th:text="|	Ihre Bestellung hat die ID ${number_id}|" style="display: none;"> Error </h2>
+	</div>
+</body>
+</html>
+

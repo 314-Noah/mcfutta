@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title th:text="${title}"></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styleNoDiv.css}"/>
+</head>
+<body>
+	<h1>
+		McFutta - Service
+	</h1>
+	<div class="left-align input-form div">
+		<br>
+		<form style="margin-left: 8%" action="#" th:action="@{/food}" th:object="${food_}" method="post">
+			<div class="input-field col s6" style="width: 75%">
+          		<input name="name" id="name" type="text" class="validate" th:field="*{name}">
+         		<label for="name">Name</label>
+        	</div>
+        	<div class="input-field col s6" style="width: 75%">
+          		<input name="price" id="price" type="text" class="validate" th:field="*{price}">
+         		<label for="price">Preis</label>
+        	</div>
+        	<input name="color" type="color" value="Farbe" th:field="*{color}">
+        	<input type="submit">
+		</form>
+	</div>
+	<div class="right-align food_list div">
+		<div th:each="food: ${foods}" >
+			<button  th:data-target="|modal_${food.id}|" class="modal-trigger quad" th:text="${food.name}"
+				th:style="|background-color: ${food.color}|"></button>
+			  <div th:id="|modal_${food.id}|" class="modal">
+			    <div class="modal-content red-text">
+			      <h4>Löschen</h4>
+			      <p>Wollen sie dieses Element wirklich löschen? <br>
+			         Dies könnte die Auswahl in manchen Menüs einschränken<br>
+			         oder zu Fehlern führen.</p>
+			      <a th:href="|/ops/food/delete/${food.id}|"><i class="material-icons red-text medium">delete</i></a>
+			    </div>
+			  </div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	M.AutoInit();
+</script>
+</html>
+
+<!--
+	getStyle()? funktionieren das tun kann?
+	TODO: Automatisch formaular ausfüllen nach Knopfdruck
+
+		<button class="quad" th:each="food: ${foods}" th:text="${food.name}" 
+		th:style="background-color: rgb(${food.color[0]},${food.color[1]},${food.color[2]})"></button>
+		th:style="background-color: rgb(${food.color[0]},5,0)"
+
+		
+
+    <script th:src="@{/js/socket.io.js}"></script>
+	<script>
+	  var socket = io("http://localhost/");
+	</script>
+-->

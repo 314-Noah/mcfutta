@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title th:text="${title}"></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/orders.js}"></script>
+</head>
+<body style="background-color: #F0F0F0">
+	<div class="card red">
+		<h1 class="card-content">
+			McFutta
+		</h1>
+	</div>
+	<div>
+		<table class="striped responsive-table" style="background-color: #858585; color: white; width: 85%;">
+			<tr>
+				<td>ID</td>
+				<td>Menü</td>
+				<td>Preis</td>
+				<td>Status</td>
+			</tr>
+			<tr th:each="order: ${orders}" th:id="${order.id}" onclick="update(this.id);">
+				<td th:text="${order.number}"></td>
+				<td th:text="${order.food.question}"></td> <!-- reused "question -> menuName" -->
+				<td th:text="${order.price}"></td>
+				<td th:if="${order.status == 0}" style="color: #EEDF00">IN ZUBEREITUNG</td>
+				<td th:if="${order.status == 1}" style="color: #00FF00">FERTIG</td>
+				<td th:if="${order.status == 2}" style="color: #FF0000">ÜBERFÄLLIG</td>
+				<td th:if="${order.status == 3}" style="color: #0000FF">ARCHIVIERT</td>
+			</tr>
+		</table>
+	</div>
+	<script>
+		//setTimeout(reload(), 100000000);
+	</script>
+</body>
+</html>

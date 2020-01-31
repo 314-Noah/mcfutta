@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title th:text="${title}"></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body style="background-color: #080808;">
+	<h1 th:text="${title}" style="color: red;"></h1>
+	<div>
+		<button th:each="menu: ${menus}" th:text="${menu.name}" th:id="${menu.id}" onclick="window.open('/ops/menu/delete/' + this.id, '_self', '');" class="red accent-3 waves-effect waves-light btn"></button>
+	</div>
+</body>
+</html>

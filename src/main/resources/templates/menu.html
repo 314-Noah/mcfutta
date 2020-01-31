@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title th:text="${title}"></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <script th:src="@{/js/script.js}"></script>
+    <script th:src="@{/js/menu_designer.js}"></script>
+	<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<body>
+	<h1>
+		McFutta - Service
+	</h1>
+	<div style="float: left; height: 50vh">
+		<form>
+			<input id="question" style="width: 500px; color: white;" type="text" name="question" placeholder="z.B. Welche Beilage wollen sie haben?">
+		</form>
+		<div style=" height: 105px;" >
+			<button class="quad" th:each="food: ${foods}" th:text="${food.name}" th:style="|background-color: ${food.color}; display: none;|"
+		 		th:id="|${food.name}_s|" onclick="deselect(this.id)"></button>
+		</div>
+		<br>
+		<button id="next" class="down btn" style="float: left;" onclick="next()">
+			Weiter
+		</button>
+		<button id="finish" class="down btn" style="right: 10px;" onclick="finish()">
+			Fertig
+		</button>
+	</div>
+		
+	<div id="food_list" class="right-align food_list">
+		<button class="quad" th:each="food: ${foods}" th:text="${food.name}" th:style="|background-color: ${food.color}|" th:id="${food.name}"
+		 onclick="select(this.id)"></button>
+	</div>
+</body>
+</html>

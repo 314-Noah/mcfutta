@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title th:text="${title}"></title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<h1>
+		McFutta
+	</h1>
+	<div>
+		<a href="/">McFutta Menus</a> <br>
+		<a href="/food">McFutta EssenManager</a> <br>
+		<a href="/orders">McFutta Orderlist</a> <br>
+		<a href="/menu">McFutta MenuCreator</a> <br>
+		<a href="/sub/menu/delete">McFutta MenuDestroyer</a> <br>
+	</div>
+</body>
+</html>

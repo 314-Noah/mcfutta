@@ -20,7 +20,7 @@ function send(string, target) {
  
 	
 	if(r != null) {
-		r.open('POST', 'http://https://mcfutta.herokuapp.com//' + target);
+		r.open('POST', 'https://mcfutta.herokuapp.com/' + target);
 		r.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		r.send(string);
 	}

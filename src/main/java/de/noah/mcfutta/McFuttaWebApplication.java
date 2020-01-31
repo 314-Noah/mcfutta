@@ -17,9 +17,9 @@ public class McFuttaWebApplication {
 
 	public static void main(String[] args) {
 		
-		JFrame jf = new JFrame("McFuttaWeb");
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jf.setVisible(true);
+		//JFrame jf = new JFrame("McFuttaWeb");
+		//jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//jf.setVisible(true);
 		
 		new MFOrderListController();
 		
